@@ -1,7 +1,7 @@
 About dtool_config
 ==================
 
-Home: http://github.com/jic-dtool/dtool-config
+Home: https://github.com/jic-dtool/dtool-config
 
 Package license: MIT
 
@@ -10,6 +10,8 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dtool_config-fe
 Summary: dtool CLI commands for configuring dtool settings
 
 Development: https://github.com/jic-dtool/dtool-config
+
+Documentation: https://github.com/jic-dtool/dtool-config
 
 Current build status
 ====================
