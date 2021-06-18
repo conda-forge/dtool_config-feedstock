@@ -1,22 +1,18 @@
 {% set name = "dtool_config" %}
-{% set reponame = "dtool-config" %}
-{% set author = "jic-dtool" %}
 {% set version = "0.4.0" %}
-{% set sha256 = "79a08c55c266e38f7f7ff976fb2aa6a0d63945c713ecefa1155c0a6abd30a6f0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/{{ author }}/{{ reponame }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/dtool-config/dtool-config-{{ version }}.tar.gz
+  sha256: "1018372294a79a7b7053a8ab3a5c1ec7f9e5f17f4f15349d648bbd143ffcfa1e"
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  preserve_egg_dir: True
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -41,12 +37,12 @@ test:
     - pip
 
 about:
-  home: http://github.com/{{ author }}/{{ reponame }}
+  home: https://github.com/jic-dtool/dtool-config
   license: MIT
   license_file: LICENSE.rst
   summary: 'dtool CLI commands for configuring dtool settings'
-
-  dev_url: https://github.com/{{ author }}/{{ reponame }}
+  doc_url: https://github.com/jic-dtool/dtool-config
+  dev_url: https://github.com/jic-dtool/dtool-config
 
 extra:
   recipe-maintainers:
