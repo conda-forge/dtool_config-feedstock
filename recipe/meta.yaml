@@ -1,5 +1,5 @@
 {% set name = "dtool_config" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/dtool-config/dtool-config-{{ version }}.tar.gz
-  sha256: "1018372294a79a7b7053a8ab3a5c1ec7f9e5f17f4f15349d648bbd143ffcfa1e"
+  sha256: 76a4fa8e180e0bc2aafd0bad4d88a5ce846324c96e1f25f27ad8366827bb7965
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -40,7 +40,7 @@ about:
   home: https://github.com/jic-dtool/dtool-config
   license: MIT
   license_file: LICENSE.rst
-  summary: 'dtool CLI commands for configuring dtool settings'
+  summary: dtool CLI commands for configuring dtool settings
   doc_url: https://github.com/jic-dtool/dtool-config
   dev_url: https://github.com/jic-dtool/dtool-config
 
