@@ -1,0 +1,59 @@
+schema_version: 1
+
+context:
+  name: dtool_config
+  version: "0.4.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/dtool-config/dtool-config-${{ version }}.tar.gz
+  sha256: 76a4fa8e180e0bc2aafd0bad4d88a5ce846324c96e1f25f27ad8366827bb7965
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - click
+    - setuptools
+    - dtoolcore
+    - dtool_cli
+
+tests:
+  - python:
+      imports:
+        - dtool_config
+        - dtool_config.cli
+        - dtool_config.utils
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - dtool config --help
+
+about:
+  license: MIT
+  license_file: LICENSE.rst
+  summary: dtool CLI commands for configuring dtool settings
+  homepage: https://github.com/jic-dtool/dtool-config
+  repository: https://github.com/jic-dtool/dtool-config
+  documentation: https://github.com/jic-dtool/dtool-config
+
+extra:
+  recipe-maintainers:
+    - pvanheus
+    - jan-janssen
+    - tjelvar-olsson
